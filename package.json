@@ -1,0 +1,30 @@
+{
+	"name": "est",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"csso:build": "bash build.css.csso.sh",
+		"css:build": "sass ./src/scss/:./public/custom/css --no-source-map && npm run csso:build",
+		"css:dev": "sass --watch ./src/scss/:./public/custom/css --no-source-map",
+		"js:build": "npx tsc && bash build.js.terser.sh",
+		"js:dev": "npx tsc --watch",
+		"cssjs:build": "npm run css:build && npm run js:build",
+		"cssjs:dev": "concurrently \"npm run css:dev\" \"npm run js:dev\"",
+		"server": "browser-sync start --proxy localhost/est/ --files './public/custom/**/*.js, ./public/custom/**/*.css, ./**/*.php'",
+		"dev": "rm -rfv public/custom && concurrently \"npm run cssjs:dev\" \"npm run server\"",
+		"build": "npm run cssjs:build"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "commonjs",
+	"devDependencies": {
+		"browser-sync": "^3.0.4",
+		"concurrently": "^9.2.1",
+		"csso": "^5.0.5",
+		"sass": "^1.97.3",
+		"terser": "^5.46.0",
+		"typescript": "^5.9.3"
+	}
+}

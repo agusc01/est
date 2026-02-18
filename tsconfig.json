@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"target": "ES2021",
+		"module": "ES2015",
+		"strict": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"sourceMap": false,
+		"outDir": "public/custom/js",
+		"removeComments": true
+	},
+	"include": ["src/ts/**/*.ts"],
+	"exclude": ["node_modules"]
+}

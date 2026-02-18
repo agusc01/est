@@ -1,0 +1,38 @@
+@use 'functions/_index' as *;
+@use 'mixins/index' as *;
+@use 'variables' as *;
+
+body {
+	background-color: lighten(#000000, 10%);
+	color: darken(#e74c3c, 20%);
+	font-size: rem(24px);
+	margin: 0;
+	min-height: 100vh;
+	@include flex;
+}
+
+h1 {
+	margin: 0;
+	@include min-responsive(sm) {
+		font-size: rem(18);
+	}
+
+	@include min-responsive(md) {
+		font-size: rem(20);
+	}
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	height: 10rem;
+	@include flex(space-evenly, center, column);
+	color: lighten(blue, 30%);
+	@include min-responsive(md) {
+		color: lighten(orange, 30%);
+	}
+	& > li {
+		font-size: 3rem;
+	}
+}

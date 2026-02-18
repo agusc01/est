@@ -1,0 +1,26 @@
+@use 'sass:map';
+@use '../variables' as *;
+
+@mixin max-responsive($breakpoint) {
+	$max-width: map.get($grid-breakpoints, $breakpoint);
+
+	@if $max-width {
+		@media (max-width: #{$max-width}) {
+			@content;
+		}
+	} @else {
+		@warn "No value found for breakpoint: #{$breakpoint}";
+	}
+}
+
+@mixin min-responsive($breakpoint) {
+	$min-width: map.get($grid-breakpoints, $breakpoint);
+
+	@if $min-width {
+		@media (min-width: #{$min-width}) {
+			@content;
+		}
+	} @else {
+		@warn "No value found for breakpoint: #{$breakpoint}";
+	}
+}
