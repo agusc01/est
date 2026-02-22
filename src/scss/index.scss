@@ -1,7 +1,7 @@
 @use 'functions/_index' as fn;
 @use 'mixins/_index' as mix;
 @use 'components/_index' as *;
-@use 'variables' as *;
+@use 'shared/variables' as *;
 
 *,
 *::before,
@@ -26,6 +26,8 @@
 body {
 	background-color: var(--body-bg);
 	padding-bottom: 15rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
 }
 
 // body {

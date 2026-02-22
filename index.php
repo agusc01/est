@@ -27,7 +27,7 @@
         </label>
     </div>
 
-    <br><hr class="separator" data-label="Spinner" /><br>
+    <br><br><hr class="separator" data-label="Spinner" /><br>
 
     <div class="spinner" role="status" aria-live="polite" aria-busy="true">
         <span class="sr-only">Loading...</span>
@@ -313,7 +313,62 @@
     <span class="badge" data-variant="transparent-warning">Warning</span>
     <span class="badge" data-variant="transparent-info">Info</span>
     <span class="badge" data-variant="transparent-dark">Dark</span>
-
+    
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li class="subnav">
+                <button class="subnavbtn">About</button>
+                <ul class="subnav-content">
+                    <li><a href="#company">Company</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                </ul>
+            </li>
+            <li class="subnav">
+                <button class="subnavbtn">Services</button>
+                <ul class="subnav-content">
+                    <li><a href="#bring">Bring</a></li>
+                    <li><a href="#deliver">Deliver</a></li>
+                    <li><a href="#package">Package</a></li>
+                    <li>
+                        <ul>
+                            <li class="subnav">
+                                <button class="subnavbtn">Express</button>
+                                <ul class="subnav-content">
+                                    <li><a href="#level1">level 1</a></li>
+                                    <li><a href="#level2">level 2</a></li>
+                                    <li>
+                                        <ul>
+                                            <li class="subnav">
+                                                <button class="subnavbtn">Level </button>
+                                                <ul class="subnav-content">
+                                                    <li><a href="#sub-nivel-1">Sub-nivel 1</a></li>
+                                                    <li><a href="#sub-nivel-2">Sub-nivel 2</a></li>
+                                                    <li><a href="#sub-nivel-3">Sub-nivel 3</a></li>
+                                                    <li><a href="#sub-nivel-4">Sub-nivel 4</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul> 
+            </li>
+            <li class="subnav">
+                <button class="subnavbtn">Partners</button>
+                <ul class="subnav-content">
+                    <li><a href="#link1">Link 1</a></li>
+                    <li><a href="#link2">Link 2</a></li>
+                    <li><a href="#link3">Link 3</a></li>
+                    <li><a href="#link4">Link 4</a></li>
+                </ul>
+            </li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
     <br><hr class="separator" data-label="Alert" /><br>
 
@@ -384,6 +439,7 @@
     <button class="btn" data-variant="transparent-dark" data-ripple="true">Dark</button>
 
     
+    <script src="public/custom/js/components/navbar.js"></script>
     <script src="public/custom/js/components/button.js"></script>
     <script src="public/custom/js/components/slider.js"></script>
     <script src="public/custom/js/components/switch.js"></script>

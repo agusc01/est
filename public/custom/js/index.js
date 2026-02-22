@@ -4,11 +4,5 @@ import { toast } from "./components/toast.js";
         console.log({ a: 'b' });
         toast.info({ description: 'Profile updated', duration: 2000, position: 'bottom-center' });
         toast.success({ title: 'Saved', duration: 2000, position: 'bottom-left' });
-        toast.error({
-            title: 'Upload failed',
-            description: 'File too large',
-            duration: 2000
-        });
-        toast.warning({ description: 'Low battery', duration: 2000, position: 'top-left' });
     });
 })();

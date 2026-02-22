@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use '../variables' as *;
+@use '../shared/variables.scss' as *;
 
 @mixin max-responsive($breakpoint) {
 	$max-width: map.get($grid-breakpoints, $breakpoint);
