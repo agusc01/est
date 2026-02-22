@@ -1,4 +1,3 @@
-@charset "UTF-8";
 :root {
   --group-bg: #f9fafb;
   --group-border: #d1d5db;
@@ -43,28 +42,13 @@
   border-top-right-radius: var(--group-radius);
   border-bottom-right-radius: var(--group-radius);
 }
-.form-group {
-  /* ============================= */
-  /* 🔥 Cuando SOLO hay addon izquierdo */
-  /* ============================= */
-}
 .form-group .form-group-text:first-child {
   border-top-left-radius: var(--group-radius);
   border-bottom-left-radius: var(--group-radius);
 }
-.form-group {
-  /* ============================= */
-  /* 🔥 Cuando SOLO hay addon derecho */
-  /* ============================= */
-}
 .form-group .form-group-text:last-child {
   border-top-right-radius: var(--group-radius);
   border-bottom-right-radius: var(--group-radius);
-}
-.form-group {
-  /* ============================= */
-  /* 🔥 Si hay 2 addons */
-  /* ============================= */
 }
 .form-group .form-group-text:first-child {
   border-right: 0;

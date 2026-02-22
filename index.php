@@ -14,16 +14,18 @@
         <li>#</li>
     </ul> -->
     
-    <label>
-        <input 
-            id="dark-mode"
-            type="checkbox"
-            name="dark-mode"
-            role="switch"
-            aria-checked="false"
-        >
-        <span>Dark Mode</span>
-    </label>
+    <div style="position:fixed;bottom:1rem;right:1rem;z-index:100">
+        <label>
+            <input 
+                id="dark-mode"
+                type="checkbox"
+                name="dark-mode"
+                role="switch"
+                aria-checked="false"
+            >
+            <span>Dark Mode</span>
+        </label>
+    </div>
 
     <br><hr class="separator" data-label="Spinner" /><br>
 
@@ -87,6 +89,19 @@
         <input type="text" class="form-control" id="name" placeholder="Name">
         <label for="name">Name</label>
     </div>
+
+    <br><hr class="separator" data-label="Select" /><br>
+
+    <div class="form-floating">
+        <select class="form-control" aria-label="Default select example" id="select-menu">
+            <option selected>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+        <label for="select-menu">Menu</label>
+    </div>
+
 
     <br><hr class="separator" data-label="Input Group" /><br>
 
@@ -202,10 +217,180 @@
     </article>
 
 
+    <br><hr class="separator" data-label="Accordion" /><br>
+
+    <div class="accordion">
+        <details open>
+            <summary>
+            <h3>What is your service?</h3>
+            </summary>
+
+            <div class="accordion-content">
+                <div>
+                    <p>
+                    We provide professional development services with scalable architecture
+                    and modern UI components.
+                    </p>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary>
+                <h3>How does pricing work?</h3>
+            </summary>
+
+            <div class="accordion-content">
+                <div>
+                    <p>
+                    Pricing depends on project complexity and required features.
+                    </p>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary>
+                <h3>Do you support dark mode?</h3>
+            </summary>
+
+            <div class="accordion-content">
+                <div>
+                    <p>
+                    Yes. The component automatically adapts to light and dark themes
+                    using CSS variables.
+                    </p>
+                </div>
+            </div>
+        </details>
+    </div>
+
+    <br><hr class="separator" data-label="Dropdown" /><br>
+
+    <nav class="dropdown" aria-label="User navigation">
+
+        <button 
+            class="dropdown-trigger btn"
+            data-variant="transparent-dark"
+            aria-expanded="false"
+            aria-haspopup="true"
+        >
+            Menu
+        </button>
+
+        <ul class="dropdown-menu" role="menu">
+            <li><a role="menuitem" href="#">Profile</a></li>
+            <li><a role="menuitem" href="#">Settings</a></li>
+            <li><a role="menuitem" href="#">Billing</a></li>
+            <li><hr></li>
+            <li><a role="menuitem" href="#">Logout</a></li>
+        </ul>
+
+    </nav>
+
+    <br><hr class="separator" data-label="Badge" /><br>
+
+    <span class="badge" data-variant="solid-primary">Primary</span>
+    <span class="badge" data-variant="solid-secondary">Secondary</span>
+    <span class="badge" data-variant="solid-success">Success</span>
+    <span class="badge" data-variant="solid-danger">Danger</span>
+    <span class="badge" data-variant="solid-warning">Warning</span>
+    <span class="badge" data-variant="solid-info">Info</span>
+    <span class="badge" data-variant="solid-dark">Dark</span>
+
+    <span class="badge" data-variant="outline-primary">Primary</span>
+    <span class="badge" data-variant="outline-secondary">Secondary</span>
+    <span class="badge" data-variant="outline-success">Success</span>
+    <span class="badge" data-variant="outline-danger">Danger</span>
+    <span class="badge" data-variant="outline-warning">Warning</span>
+    <span class="badge" data-variant="outline-info">Info</span>
+    <span class="badge" data-variant="outline-dark">Dark</span>
+
+    <span class="badge" data-variant="transparent-primary">Primary</span>
+    <span class="badge" data-variant="transparent-secondary">Secondary</span>
+    <span class="badge" data-variant="transparent-success">Success</span>
+    <span class="badge" data-variant="transparent-danger">Danger</span>
+    <span class="badge" data-variant="transparent-warning">Warning</span>
+    <span class="badge" data-variant="transparent-info">Info</span>
+    <span class="badge" data-variant="transparent-dark">Dark</span>
+
+
+    <br><hr class="separator" data-label="Alert" /><br>
+
+    <div class="alert alert-info">
+        <div class="alert-icon">ℹ</div>
+        <div class="alert-content">
+            <div class="alert-title">Information</div>
+            <div class="alert-description">
+                This is an informational message.
+            </div>
+        </div>
+    </div>
+
+    <div class="alert alert-warning">
+        <div class="alert-icon">⚠</div>
+        <div class="alert-content">
+            <div class="alert-title">Warning</div>
+            <div class="alert-description">
+                Be careful with this action.
+            </div>
+        </div>
+    </div>
+
+    <div class="alert alert-warning">
+        <div class="alert-icon">⚠</div>
+        <div class="alert-content">
+            <div class="alert-title">Warning</div>
+            <div class="alert-description">
+                Be careful with this action.
+            </div>
+        </div>
+    </div>
+
+    <div class="alert alert-error">
+        <div class="alert-icon">✖</div>
+        <div class="alert-content">
+            <div class="alert-title">Error</div>
+            <div class="alert-description">
+                Something went wrong.
+            </div>
+        </div>
+    </div>
+
+    <br><hr class="separator" data-label="Button" /><br>
+
+    <button class="btn" data-variant="solid-primary" data-ripple="true">Primary</button>
+    <button class="btn" data-variant="solid-secondary" data-ripple="true">Secondary</button>
+    <button class="btn" data-variant="solid-success" data-ripple="true">Success</button>
+    <button class="btn" data-variant="solid-danger" data-ripple="true">Danger</button>
+    <button class="btn" data-variant="solid-warning" data-ripple="true">Warning</button>
+    <button class="btn" data-variant="solid-info" data-ripple="true">Info</button>
+    <button class="btn" data-variant="solid-dark" data-ripple="true">Dark</button>
+    
+    <button class="btn" data-variant="outline-primary" data-ripple="true">Primary</button>
+    <button class="btn" data-variant="outline-secondary" data-ripple="true">Secondary</button>
+    <button class="btn" data-variant="outline-success" data-ripple="true">Success</button>
+    <button class="btn" data-variant="outline-danger" data-ripple="true">Danger</button>
+    <button class="btn" data-variant="outline-warning" data-ripple="true">Warning</button>
+    <button class="btn" data-variant="outline-info" data-ripple="true">Info</button>
+    <button class="btn" data-variant="outline-dark" data-ripple="true">Dark</button>
+
+    <button class="btn" data-variant="transparent-primary" data-ripple="true">Primary</button>
+    <button class="btn" data-variant="transparent-secondary" data-ripple="true">Secondary</button>
+    <button class="btn" data-variant="transparent-success" data-ripple="true">Success</button>
+    <button class="btn" data-variant="transparent-danger" data-ripple="true">Danger</button>
+    <button class="btn" data-variant="transparent-warning" data-ripple="true">Warning</button>
+    <button class="btn" data-variant="transparent-info" data-ripple="true">Info</button>
+    <button class="btn" data-variant="transparent-dark" data-ripple="true">Dark</button>
+
+    
+    <script src="public/custom/js/components/button.js"></script>
     <script src="public/custom/js/components/slider.js"></script>
     <script src="public/custom/js/components/switch.js"></script>
-    <script src="public/custom/js/components/tabs.js"></script>
+    <script src="public/custom/js/components/dropdown.js"></script>
+    <!-- <script src="public/custom/js/components/tabs.js"></script> No needed, It using slider script-->
+    <!-- <script src="public/custom/js/components/accordion.js"></script> If you want only one opened -->
     <script src="public/custom/js/helpers/dark-mode.js"></script>
-    <script src="public/custom/js/index.js"></script>
+    <script type="module" src="public/custom/js/index.js"></script>
 </body>
 </html>

@@ -51,25 +51,16 @@
 		}
 	}
 
-	/* ============================= */
-	/* 🔥 Cuando SOLO hay addon izquierdo */
-	/* ============================= */
 	.form-group-text:first-child {
 		border-top-left-radius: var(--group-radius);
 		border-bottom-left-radius: var(--group-radius);
 	}
 
-	/* ============================= */
-	/* 🔥 Cuando SOLO hay addon derecho */
-	/* ============================= */
 	.form-group-text:last-child {
 		border-top-right-radius: var(--group-radius);
 		border-bottom-right-radius: var(--group-radius);
 	}
 
-	/* ============================= */
-	/* 🔥 Si hay 2 addons */
-	/* ============================= */
 	.form-group-text:first-child {
 		border-right: 0;
 	}

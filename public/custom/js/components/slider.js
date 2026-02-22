@@ -1,10 +1,10 @@
 "use strict";
 (() => {
-    document.querySelectorAll(".slider,.tabulator").forEach((slider) => {
+    document.querySelectorAll('.slider,.tabulator').forEach((slider) => {
         const OFFSET = 40;
-        const TIME_LOOP = "5000";
+        const TIME_LOOP = '5000';
         const radios = slider.querySelectorAll("input[type='radio']");
-        const loopEnabled = slider.dataset.loop === "true";
+        const loopEnabled = slider.dataset.loop === 'true';
         const loopTime = parseInt(slider.dataset.time || TIME_LOOP, 10);
         let startX = 0;
         let interval = null;
@@ -45,11 +45,11 @@
                 interval = null;
             }
         }
-        slider.addEventListener("touchstart", (e) => {
+        slider.addEventListener('touchstart', (e) => {
             startX = e.touches[0].clientX;
             stopLoop();
         });
-        slider.addEventListener("touchend", (e) => {
+        slider.addEventListener('touchend', (e) => {
             const diff = startX - e.changedTouches[0].clientX;
             const current = getIndex();
             if (diff > OFFSET) {
@@ -60,8 +60,8 @@
             }
             startLoop();
         });
-        slider.addEventListener("mouseenter", stopLoop);
-        slider.addEventListener("mouseleave", startLoop);
+        slider.addEventListener('mouseenter', stopLoop);
+        slider.addEventListener('mouseleave', startLoop);
         startLoop();
     });
 })();

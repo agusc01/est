@@ -1,0 +1,55 @@
+@use './../shared/colors.scss' as *;
+
+.badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.25rem 0.6rem;
+	font-size: 0.75rem;
+	font-weight: 600;
+	border-radius: 999px;
+	border: 2px solid transparent;
+	transition: all 0.2s ease;
+}
+
+@each $name, $color in $colors {
+	.badge[data-variant='solid-#{$name}'] {
+		background: #{$color};
+		border-color: #{$color};
+		@if $name == light {
+			color: var(--btn-always-dark);
+		} @else {
+			color: var(--btn-always-light);
+		}
+	}
+
+	.badge[data-variant='outline-#{$name}'] {
+		$new-color: $color;
+		@if $name == dark {
+			$new-color: var(--btn-dark);
+		}
+		$new-hover-color: var(--btn-dark);
+		@if $name == dark {
+			$new-hover-color: var(--btn-light);
+		}
+
+		background: transparent;
+		border: 2px solid $new-color;
+		color: $new-color;
+	}
+
+	.badge[data-variant='transparent-#{$name}'] {
+		$new-color: $color;
+		@if $name == dark {
+			$new-color: var(--btn-dark);
+		}
+
+		background: transparent;
+		border: 0;
+		color: #{$new-color};
+
+		&:hover {
+			background: rgba($new-color, 0.1);
+		}
+	}
+}
