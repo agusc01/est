@@ -1,0 +1,74 @@
+@charset "UTF-8";
+:root {
+  --group-bg: #f9fafb;
+  --group-border: #d1d5db;
+  --group-text: #6b7280;
+  --group-input-bg: #ffffff;
+  --group-width: 100%;
+  --group-radius: 0.75rem;
+}
+
+[data-theme=dark] {
+  --group-bg: #111827;
+  --group-border: #374151;
+  --group-text: #9ca3af;
+  --group-input-bg: #0f172a;
+}
+
+.form-group {
+  display: flex;
+  width: var(--group-width);
+}
+.form-group .form-group-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  background: var(--group-bg);
+  border: 0.125rem solid var(--group-border);
+  color: var(--group-text);
+  font-weight: 500;
+}
+.form-group .form-floating {
+  flex: 1;
+}
+.form-group .form-floating .form-control {
+  border-radius: 0;
+}
+.form-group .form-floating[data-position=left] .form-control {
+  border-top-left-radius: var(--group-radius);
+  border-bottom-left-radius: var(--group-radius);
+}
+.form-group .form-floating[data-position=right] .form-control {
+  border-top-right-radius: var(--group-radius);
+  border-bottom-right-radius: var(--group-radius);
+}
+.form-group {
+  /* ============================= */
+  /* 🔥 Cuando SOLO hay addon izquierdo */
+  /* ============================= */
+}
+.form-group .form-group-text:first-child {
+  border-top-left-radius: var(--group-radius);
+  border-bottom-left-radius: var(--group-radius);
+}
+.form-group {
+  /* ============================= */
+  /* 🔥 Cuando SOLO hay addon derecho */
+  /* ============================= */
+}
+.form-group .form-group-text:last-child {
+  border-top-right-radius: var(--group-radius);
+  border-bottom-right-radius: var(--group-radius);
+}
+.form-group {
+  /* ============================= */
+  /* 🔥 Si hay 2 addons */
+  /* ============================= */
+}
+.form-group .form-group-text:first-child {
+  border-right: 0;
+}
+.form-group .form-group-text:last-child {
+  border-left: 0;
+}

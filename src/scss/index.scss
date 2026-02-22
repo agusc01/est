@@ -1,38 +1,64 @@
-@use 'functions/_index' as *;
-@use 'mixins/index' as *;
+@use 'functions/_index' as fn;
+@use 'mixins/_index' as mix;
+@use 'components/_index' as *;
 @use 'variables' as *;
 
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	:root {
+		scroll-behavior: smooth;
+	}
+}
+
+:root {
+	--body-bg: rgb(247, 247, 226);
+}
+
+[data-theme='dark'] {
+	--body-bg: #372392;
+}
+
 body {
-	background-color: lighten(#000000, 10%);
-	color: darken(#e74c3c, 20%);
-	font-size: rem(24px);
-	margin: 0;
-	min-height: 100vh;
-	@include flex;
+	background-color: var(--body-bg);
+	padding-bottom: 5rem;
 }
 
-h1 {
-	margin: 0;
-	@include min-responsive(sm) {
-		font-size: rem(18);
-	}
+// body {
+// 	background-color: fn.lighten(#000000, 10%);
+// 	color: fn.darken(#e74c3c, 20%);
+// 	font-size: fn.rem(24px);
+// 	margin: 0;
+// 	min-height: 100vh;
+// 	@include mix.flex;
+// }
 
-	@include min-responsive(md) {
-		font-size: rem(20);
-	}
-}
+// h1 {
+// 	margin: 0;
+// 	@include mix.min-responsive(sm) {
+// 		font-size: fn.rem(18);
+// 	}
 
-ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	height: 10rem;
-	@include flex(space-evenly, center, column);
-	color: lighten(blue, 30%);
-	@include min-responsive(md) {
-		color: lighten(orange, 30%);
-	}
-	& > li {
-		font-size: 3rem;
-	}
-}
+// 	@include mix.min-responsive(md) {
+// 		font-size: fn.rem(20);
+// 	}
+// }
+
+// ul {
+// 	list-style: none;
+// 	margin: 0;
+// 	padding: 0;
+// 	height: 10rem;
+// 	@include mix.flex(space-evenly, center, column);
+// 	color: lighten(blue, 30%);
+// 	@include mix.min-responsive(md) {
+// 		color: fn.lighten(orange, 30%);
+// 	}
+// 	& > li {
+// 		font-size: 3rem;
+// 	}
+// }

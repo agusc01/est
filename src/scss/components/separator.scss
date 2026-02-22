@@ -1,0 +1,36 @@
+:root {
+	--separator-color: #e5e7eb;
+	--separator-text: #6b7280;
+	--separator-bg: var(--body-bg); // #ffffff;
+}
+
+[data-theme='dark'] {
+	--separator-color: #374151;
+	--separator-text: #9ca3af;
+	--separator-bg: var(--body-bg); // #1f2937;
+}
+
+.separator {
+	border: none;
+	height: 0.125rem;
+	background: var(--separator-color);
+	position: relative;
+	margin: 1.5rem 0;
+	overflow: visible;
+
+	&[data-label] {
+		background: var(--separator-color);
+	}
+
+	&[data-label]::before {
+		content: attr(data-label);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background: var(--separator-bg);
+		padding: 0 0.75rem;
+		font-size: 1rem;
+		color: var(--separator-text);
+	}
+}

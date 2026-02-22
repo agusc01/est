@@ -1,0 +1,34 @@
+:root {
+  --spinner-color: #2563eb;
+  --spinner-bg: #e5e7eb;
+}
+
+[data-theme=dark] {
+  --spinner-color: #60a5fa;
+  --spinner-bg: #374151;
+}
+
+.spinner {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 0.25rem solid var(--spinner-bg);
+  border-top: 0.25rem solid var(--spinner-color);
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

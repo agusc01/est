@@ -1,0 +1,27 @@
+@use './../shared/form.scss';
+
+.form-floating {
+	position: relative;
+
+	.form-control {
+		&:focus + label,
+		&:not(:placeholder-shown) + label {
+			top: -0.5rem;
+			font-size: 0.9rem;
+			color: var(--input-label-focus);
+			padding: 0.15rem 0.3rem;
+			border-radius: 0.4rem;
+		}
+	}
+
+	label {
+		position: absolute;
+		left: 1rem;
+		top: 0.9rem;
+		font-size: 1.25rem;
+		color: var(--input-text);
+		background: var(--input-bg);
+
+		transition: all var(--input-time) ease;
+	}
+}

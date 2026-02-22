@@ -1,0 +1,46 @@
+:root {
+  --switch-bg: #d1d5db;
+  --switch-bg-checked: #22c55e;
+  --switch-thumb: #ffffff;
+  --switch-focus: rgba(34, 197, 94, 0.4);
+}
+
+[data-theme=dark] {
+  --switch-bg: #374151;
+  --switch-bg-checked: #16a34a;
+  --switch-thumb: #f9fafb;
+  --switch-focus: rgba(34, 197, 94, 0.6);
+}
+
+input[role=switch] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 3.125rem;
+  height: 1.625rem;
+  background: var(--switch-bg);
+  border-radius: 3.125rem;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s;
+  outline: none;
+}
+input[role=switch]::before {
+  content: "";
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: var(--switch-thumb);
+  border-radius: 50%;
+  top: 0.1875rem;
+  left: 0.1875rem;
+  transition: transform 0.3s;
+}
+input[role=switch]:checked {
+  background: var(--switch-bg-checked);
+}
+input[role=switch]:checked::before {
+  transform: translateX(1.5rem);
+}
+input[role=switch]:focus-visible {
+  box-shadow: 0 0 0 0.25rem var(--switch-focus);
+}

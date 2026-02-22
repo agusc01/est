@@ -1,0 +1,42 @@
+:root {
+	--skeleton-base: #e5e7eb;
+	--skeleton-highlight: #f3f4f6;
+}
+
+[data-theme='dark'] {
+	--skeleton-base: #2a2f3a;
+	--skeleton-highlight: #3a3f4a;
+}
+
+$skeleton-speed: 1.4s;
+
+.skeleton {
+	position: relative;
+	overflow: hidden;
+	background: var(--skeleton-base);
+
+	width: var(--w, 100%);
+	height: var(--h, 1rem);
+	border-radius: var(--r, 0.5rem);
+	margin: var(--m, 0);
+
+	&::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(
+			90deg,
+			transparent,
+			var(--skeleton-highlight),
+			transparent
+		);
+		transform: translateX(-100%);
+		animation: shimmer $skeleton-speed infinite;
+	}
+}
+
+@keyframes shimmer {
+	100% {
+		transform: translateX(100%);
+	}
+}

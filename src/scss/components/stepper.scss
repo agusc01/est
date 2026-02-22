@@ -1,0 +1,86 @@
+:root {
+	--step-base: #e5e7eb;
+	--step-completed: #22c55e;
+	--step-active: #3b82f6;
+	--step-bg: #ffffff;
+	--step-border: #d1d5db;
+	--step-check: #ffffff;
+	--step-shadow-active: rgba(59, 130, 246, 0.2);
+}
+
+[data-theme='dark'] {
+	--step-base: #374151;
+	--step-completed: #22c587;
+	--step-active: rgb(75, 161, 182);
+	--step-bg: #1f2937;
+	--step-border: #4b5563;
+	--step-check: #ffffff;
+}
+
+.stepper {
+	ol {
+		display: flex;
+		align-items: center;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		flex: 1;
+		text-align: center;
+		position: relative;
+
+		&:not(:last-child)::after {
+			content: '';
+			position: absolute;
+			top: 1rem;
+			left: 50%;
+			width: 100%;
+			height: 0.15rem;
+			background-color: var(--step-base);
+			transform: translateY(-50%);
+			z-index: 0;
+		}
+
+		.circle {
+			width: 2rem;
+			height: 2rem;
+			border-radius: 50%;
+			background-color: var(--step-bg);
+			border: 0.15rem solid var(--step-border);
+			margin: 0 auto 0.5rem;
+			position: relative;
+			z-index: 1;
+			transition: 0.3s ease;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		&.is-completed {
+			&:not(:last-child)::after {
+				background-color: var(--step-completed);
+			}
+
+			.circle {
+				background-color: var(--step-completed);
+				border-color: var(--step-completed);
+				color: var(--step-check);
+
+				&::after {
+					content: '✓';
+					font-size: 1rem;
+					font-weight: 600;
+					line-height: 1;
+				}
+			}
+		}
+
+		&.is-active .circle {
+			border-color: var(--step-active);
+			background-color: var(--step-active);
+			box-shadow: 0 0 0 0.25rem var(--step-shadow-active);
+		}
+	}
+}
